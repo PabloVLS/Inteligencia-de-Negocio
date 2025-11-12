@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="IFTM">
+    <Application name="KNIME" version="5.4.3"/>
+  </Header>
+  <DataDictionary numberOfFields="21">
+    <DataField name="age" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="18.0" rightMargin="88.0"/>
+    </DataField>
+    <DataField name="job" optype="categorical" dataType="string">
+      <Value value="blue-collar"/>
+      <Value value="services"/>
+      <Value value="admin."/>
+      <Value value="entrepreneur"/>
+      <Value value="self-employed"/>
+      <Value value="technician"/>
+      <Value value="management"/>
+      <Value value="student"/>
+      <Value value="retired"/>
+      <Value value="housemaid"/>
+      <Value value="unemployed"/>
+      <Value value="unknown"/>
+    </DataField>
+    <DataField name="marital" optype="categorical" dataType="string">
+      <Value value="married"/>
+      <Value value="single"/>
+      <Value value="divorced"/>
+      <Value value="unknown"/>
+    </DataField>
+    <DataField name="education" optype="categorical" dataType="string">
+      <Value value="basic.9y"/>
+      <Value value="high.school"/>
+      <Value value="university.degree"/>
+      <Value value="professional.course"/>
+      <Value value="basic.6y"/>
+      <Value value="basic.4y"/>
+      <Value value="unknown"/>
+      <Value value="illiterate"/>
+    </DataField>
+    <DataField name="default" optype="categorical" dataType="string">
+      <Value value="no"/>
+      <Value value="unknown"/>
+      <Value value="yes"/>
+    </DataField>
+    <DataField name="housing" optype="categorical" dataType="string">
+      <Value value="yes"/>
+      <Value value="no"/>
+      <Value value="unknown"/>
+    </DataField>
+    <DataField name="loan" optype="categorical" dataType="string">
+      <Value value="no"/>
+      <Value value="unknown"/>
+      <Value value="yes"/>
+    </DataField>
+    <DataField name="contact" optype="categorical" dataType="string">
+      <Value value="cellular"/>
+      <Value value="telephone"/>
+    </DataField>
+    <DataField name="month" optype="categorical" dataType="string">
+      <Value value="may"/>
+      <Value value="jun"/>
+      <Value value="nov"/>
+      <Value value="sep"/>
+      <Value value="jul"/>
+      <Value value="aug"/>
+      <Value value="mar"/>
+      <Value value="oct"/>
+      <Value value="apr"/>
+      <Value value="dec"/>
+    </DataField>
+    <DataField name="day_of_week" optype="categorical" dataType="string">
+      <Value value="fri"/>
+      <Value value="wed"/>
+      <Value value="mon"/>
+      <Value value="thu"/>
+      <Value value="tue"/>
+    </DataField>
+    <DataField name="duration" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="3643.0"/>
+    </DataField>
+    <DataField name="campaign" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="35.0"/>
+    </DataField>
+    <DataField name="pdays" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="999.0"/>
+    </DataField>
+    <DataField name="previous" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="6.0"/>
+    </DataField>
+    <DataField name="poutcome" optype="categorical" dataType="string">
+      <Value value="nonexistent"/>
+      <Value value="failure"/>
+      <Value value="success"/>
+    </DataField>
+    <DataField name="emp.var.rate" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-3.4" rightMargin="1.4"/>
+    </DataField>
+    <DataField name="cons.price.idx" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="92.201" rightMargin="94.767"/>
+    </DataField>
+    <DataField name="cons.conf.idx" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-50.8" rightMargin="-26.9"/>
+    </DataField>
+    <DataField name="euribor3m" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.635" rightMargin="5.045"/>
+    </DataField>
+    <DataField name="nr.employed" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="4963.6" rightMargin="5228.1"/>
+    </DataField>
+    <DataField name="y" optype="categorical" dataType="string">
+      <Value value="no"/>
+      <Value value="yes"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="multiSplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="age" invalidValueTreatment="asIs"/>
+      <MiningField name="job" invalidValueTreatment="asIs"/>
+      <MiningField name="marital" invalidValueTreatment="asIs"/>
+      <MiningField name="education" invalidValueTreatment="asIs"/>
+      <MiningField name="default" invalidValueTreatment="asIs"/>
+      <MiningField name="housing" invalidValueTreatment="asIs"/>
+      <MiningField name="loan" invalidValueTreatment="asIs"/>
+      <MiningField name="contact" invalidValueTreatment="asIs"/>
+      <MiningField name="month" invalidValueTreatment="asIs"/>
+      <MiningField name="day_of_week" invalidValueTreatment="asIs"/>
+      <MiningField name="duration" invalidValueTreatment="asIs"/>
+      <MiningField name="campaign" invalidValueTreatment="asIs"/>
+      <MiningField name="pdays" invalidValueTreatment="asIs"/>
+      <MiningField name="previous" invalidValueTreatment="asIs"/>
+      <MiningField name="poutcome" invalidValueTreatment="asIs"/>
+      <MiningField name="emp.var.rate" invalidValueTreatment="asIs"/>
+      <MiningField name="cons.price.idx" invalidValueTreatment="asIs"/>
+      <MiningField name="cons.conf.idx" invalidValueTreatment="asIs"/>
+      <MiningField name="euribor3m" invalidValueTreatment="asIs"/>
+      <MiningField name="nr.employed" invalidValueTreatment="asIs"/>
+      <MiningField name="y" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="no" recordCount="2883.0">
+      <True/>
+      <ScoreDistribution value="no" recordCount="2567.0"/>
+      <ScoreDistribution value="yes" recordCount="316.0"/>
+      <Node id="2" score="no" recordCount="2609.0">
+        <SimplePredicate field="duration" operator="lessOrEqual" value="563.5"/>
+        <ScoreDistribution value="no" recordCount="2430.0"/>
+        <ScoreDistribution value="yes" recordCount="179.0"/>
+        <Node id="108" score="no" recordCount="316.0">
+          <SimplePredicate field="nr.employed" operator="lessOrEqual" value="5087.65"/>
+          <ScoreDistribution value="no" recordCount="193.0"/>
+          <ScoreDistribution value="yes" recordCount="123.0"/>
+          <Node id="135" score="no" recordCount="121.0">
+            <SimplePredicate field="duration" operator="lessOrEqual" value="162.5"/>
+            <ScoreDistribution value="no" recordCount="103.0"/>
+            <ScoreDistribution value="yes" recordCount="18.0"/>
+            <Node id="146" score="no" recordCount="3.0">
+              <SimplePredicate field="month" operator="equal" value="may"/>
+              <ScoreDistribution value="no" recordCount="3.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="147" score="no" recordCount="20.0">
+              <SimplePredicate field="month" operator="equal" value="jun"/>
+              <ScoreDistribution value="no" recordCount="18.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+            <Node id="165" score="no" recordCount="11.0">
+              <SimplePredicate field="month" operator="equal" value="nov"/>
+              <ScoreDistribution value="no" recordCount="9.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+              <Node id="170" score="no" recordCount="8.0">
+                <SimplePredicate field="previous" operator="lessOrEqual" value="1.5"/>
+                <ScoreDistribution value="no" recordCount="8.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="171" score="yes" recordCount="3.0">
+                <SimplePredicate field="previous" operator="greaterThan" value="1.5"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+            </Node>
+            <Node id="172" score="no" recordCount="10.0">
+              <SimplePredicate field="month" operator="equal" value="jul"/>
+              <ScoreDistribution value="no" recordCount="9.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="177" score="yes" recordCount="4.0">
+              <SimplePredicate field="month" operator="equal" value="mar"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+            </Node>
+            <Node id="202" score="no" recordCount="31.0">
+              <SimplePredicate field="month" operator="equal" value="aug"/>
+              <ScoreDistribution value="no" recordCount="26.0"/>
+              <ScoreDistribution value="yes" recordCount="5.0"/>
+              <Node id="207" score="no" recordCount="24.0">
+                <SimplePredicate field="duration" operator="lessOrEqual" value="147.5"/>
+                <ScoreDistribution value="no" recordCount="23.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="221" score="yes" recordCount="7.0">
+                <SimplePredicate field="duration" operator="greaterThan" value="147.5"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="4.0"/>
+                <Node id="223" score="yes" recordCount="3.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="226" score="yes" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="227" score="yes" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="228" score="no" recordCount="2.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="256" score="no" recordCount="23.0">
+              <SimplePredicate field="month" operator="equal" value="oct"/>
+              <ScoreDistribution value="no" recordCount="20.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+              <Node id="257" score="no" recordCount="10.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="32.0"/>
+                <ScoreDistribution value="no" recordCount="7.0"/>
+                <ScoreDistribution value="yes" recordCount="3.0"/>
+                <Node id="258" score="no" recordCount="4.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="261" score="yes" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="262" score="no" recordCount="3.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="263" score="yes" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="264" score="no" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+              <Node id="265" score="no" recordCount="13.0">
+                <SimplePredicate field="age" operator="greaterThan" value="32.0"/>
+                <ScoreDistribution value="no" recordCount="13.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="266" score="no" recordCount="13.0">
+              <SimplePredicate field="month" operator="equal" value="sep"/>
+              <ScoreDistribution value="no" recordCount="11.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+              <Node id="267" score="no" recordCount="10.0">
+                <SimplePredicate field="loan" operator="equal" value="no"/>
+                <ScoreDistribution value="no" recordCount="10.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="269" score="yes" recordCount="3.0">
+                <SimplePredicate field="loan" operator="equal" value="yes"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+            </Node>
+            <Node id="270" score="no" recordCount="3.0">
+              <SimplePredicate field="month" operator="equal" value="apr"/>
+              <ScoreDistribution value="no" recordCount="3.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="271" score="no" recordCount="3.0">
+              <SimplePredicate field="month" operator="equal" value="dec"/>
+              <ScoreDistribution value="no" recordCount="3.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="272" score="yes" recordCount="195.0">
+            <SimplePredicate field="duration" operator="greaterThan" value="162.5"/>
+            <ScoreDistribution value="no" recordCount="90.0"/>
+            <ScoreDistribution value="yes" recordCount="105.0"/>
+            <Node id="273" score="yes" recordCount="48.0">
+              <SimplePredicate field="pdays" operator="lessOrEqual" value="13.5"/>
+              <ScoreDistribution value="no" recordCount="9.0"/>
+              <ScoreDistribution value="yes" recordCount="39.0"/>
+              <Node id="274" score="yes" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="275" score="yes" recordCount="5.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+              </Node>
+              <Node id="276" score="yes" recordCount="17.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="6.0"/>
+                <ScoreDistribution value="yes" recordCount="11.0"/>
+                <Node id="277" score="no" recordCount="3.0">
+                  <SimplePredicate field="cons.conf.idx" operator="lessOrEqual" value="-45.15"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="278" score="yes" recordCount="14.0">
+                  <SimplePredicate field="cons.conf.idx" operator="greaterThan" value="-45.15"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="11.0"/>
+                  <Node id="279" score="yes" recordCount="6.0">
+                    <SimplePredicate field="marital" operator="equal" value="married"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="6.0"/>
+                  </Node>
+                  <Node id="280" score="yes" recordCount="7.0">
+                    <SimplePredicate field="marital" operator="equal" value="single"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="5.0"/>
+                    <Node id="281" score="yes" recordCount="5.0">
+                      <SimplePredicate field="duration" operator="lessOrEqual" value="291.5"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="5.0"/>
+                    </Node>
+                    <Node id="282" score="no" recordCount="2.0">
+                      <SimplePredicate field="duration" operator="greaterThan" value="291.5"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="283" score="no" recordCount="1.0">
+                    <SimplePredicate field="marital" operator="equal" value="divorced"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                </Node>
+              </Node>
+              <Node id="285" score="yes" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="286" score="yes" recordCount="7.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="6.0"/>
+              </Node>
+              <Node id="289" score="yes" recordCount="5.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="4.0"/>
+              </Node>
+              <Node id="292" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="student"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="294" score="yes" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="4.0"/>
+              </Node>
+              <Node id="295" score="yes" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="4.0"/>
+              </Node>
+              <Node id="296" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="unknown"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="298" score="no" recordCount="147.0">
+              <SimplePredicate field="pdays" operator="greaterThan" value="13.5"/>
+              <ScoreDistribution value="no" recordCount="81.0"/>
+              <ScoreDistribution value="yes" recordCount="66.0"/>
+              <Node id="299" score="yes" recordCount="126.0">
+                <SimplePredicate field="contact" operator="equal" value="cellular"/>
+                <ScoreDistribution value="no" recordCount="62.0"/>
+                <ScoreDistribution value="yes" recordCount="64.0"/>
+                <Node id="300" score="yes" recordCount="4.0">
+                  <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                </Node>
+                <Node id="303" score="yes" recordCount="12.0">
+                  <SimplePredicate field="job" operator="equal" value="services"/>
+                  <ScoreDistribution value="no" recordCount="5.0"/>
+                  <ScoreDistribution value="yes" recordCount="7.0"/>
+                  <Node id="304" score="no" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="may"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="305" score="yes" recordCount="4.0">
+                    <SimplePredicate field="month" operator="equal" value="jun"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="308" score="no" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="nov"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="309" score="yes" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="jul"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                  <Node id="311" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="aug"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="312" score="no" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="oct"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="313" score="yes" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="sep"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="316" score="yes" recordCount="25.0">
+                  <SimplePredicate field="job" operator="equal" value="admin."/>
+                  <ScoreDistribution value="no" recordCount="9.0"/>
+                  <ScoreDistribution value="yes" recordCount="16.0"/>
+                  <Node id="317" score="yes" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="may"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                  <Node id="318" score="yes" recordCount="4.0">
+                    <SimplePredicate field="month" operator="equal" value="jun"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="321" score="no" recordCount="3.0">
+                    <SimplePredicate field="month" operator="equal" value="nov"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="322" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="jul"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="323" score="no" recordCount="4.0">
+                    <SimplePredicate field="month" operator="equal" value="mar"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                    <Node id="324" score="yes" recordCount="2.0">
+                      <SimplePredicate field="poutcome" operator="equal" value="nonexistent"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="2.0"/>
+                    </Node>
+                    <Node id="326" score="no" recordCount="2.0">
+                      <SimplePredicate field="poutcome" operator="equal" value="failure"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="327" score="yes" recordCount="5.0">
+                    <SimplePredicate field="month" operator="equal" value="aug"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="4.0"/>
+                  </Node>
+                  <Node id="330" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="oct"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="331" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="sep"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="333" score="yes" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="dec"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="334" score="yes" recordCount="6.0">
+                  <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="4.0"/>
+                  <Node id="335" score="yes" recordCount="3.0">
+                    <SimplePredicate field="euribor3m" operator="lessOrEqual" value="0.8089999999999999"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="336" score="no" recordCount="3.0">
+                    <SimplePredicate field="euribor3m" operator="greaterThan" value="0.8089999999999999"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="337" score="no" recordCount="23.0">
+                  <SimplePredicate field="job" operator="equal" value="technician"/>
+                  <ScoreDistribution value="no" recordCount="13.0"/>
+                  <ScoreDistribution value="yes" recordCount="10.0"/>
+                  <Node id="339" score="yes" recordCount="5.0">
+                    <SimplePredicate field="month" operator="equal" value="jun"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                    <Node id="340" score="no" recordCount="3.0">
+                      <SimplePredicate field="euribor3m" operator="lessOrEqual" value="1.2650000000000001"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                    <Node id="341" score="yes" recordCount="2.0">
+                      <SimplePredicate field="euribor3m" operator="greaterThan" value="1.2650000000000001"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="2.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="342" score="yes" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="nov"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                  <Node id="343" score="no" recordCount="4.0">
+                    <SimplePredicate field="month" operator="equal" value="jul"/>
+                    <ScoreDistribution value="no" recordCount="4.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="344" score="no" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="mar"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="345" score="no" recordCount="3.0">
+                    <SimplePredicate field="month" operator="equal" value="aug"/>
+                    <ScoreDistribution value="no" recordCount="3.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="346" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="oct"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="347" score="yes" recordCount="5.0">
+                    <SimplePredicate field="month" operator="equal" value="sep"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                    <Node id="348" score="no" recordCount="3.0">
+                      <SimplePredicate field="poutcome" operator="equal" value="nonexistent"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                    <Node id="350" score="yes" recordCount="2.0">
+                      <SimplePredicate field="poutcome" operator="equal" value="failure"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="2.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="352" score="yes" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="dec"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="353" score="yes" recordCount="9.0">
+                  <SimplePredicate field="job" operator="equal" value="management"/>
+                  <ScoreDistribution value="no" recordCount="4.0"/>
+                  <ScoreDistribution value="yes" recordCount="5.0"/>
+                  <Node id="354" score="yes" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="may"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="357" score="no" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="jul"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="359" score="yes" recordCount="4.0">
+                    <SimplePredicate field="month" operator="equal" value="aug"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="362" score="yes" recordCount="1.0">
+                    <SimplePredicate field="month" operator="equal" value="oct"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="363" score="no" recordCount="2.0">
+                    <SimplePredicate field="month" operator="equal" value="sep"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                </Node>
+                <Node id="366" score="no" recordCount="16.0">
+                  <SimplePredicate field="job" operator="equal" value="student"/>
+                  <ScoreDistribution value="no" recordCount="9.0"/>
+                  <ScoreDistribution value="yes" recordCount="7.0"/>
+                  <Node id="368" score="no" recordCount="3.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                    <ScoreDistribution value="no" recordCount="3.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="369" score="yes" recordCount="4.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="372" score="yes" recordCount="4.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                  <Node id="375" score="no" recordCount="5.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                    <ScoreDistribution value="no" recordCount="4.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="378" score="no" recordCount="2.0">
+                  <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="379" score="no" recordCount="6.0">
+                  <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                  <Node id="380" score="no" recordCount="3.0">
+                    <SimplePredicate field="cons.conf.idx" operator="lessOrEqual" value="-39.9"/>
+                    <ScoreDistribution value="no" recordCount="3.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="381" score="yes" recordCount="3.0">
+                    <SimplePredicate field="cons.conf.idx" operator="greaterThan" value="-39.9"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                </Node>
+                <Node id="382" score="no" recordCount="18.0">
+                  <SimplePredicate field="job" operator="equal" value="retired"/>
+                  <ScoreDistribution value="no" recordCount="12.0"/>
+                  <ScoreDistribution value="yes" recordCount="6.0"/>
+                  <Node id="383" score="no" recordCount="15.0">
+                    <SimplePredicate field="loan" operator="equal" value="no"/>
+                    <ScoreDistribution value="no" recordCount="12.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                    <Node id="384" score="no" recordCount="13.0">
+                      <SimplePredicate field="age" operator="lessOrEqual" value="78.5"/>
+                      <ScoreDistribution value="no" recordCount="12.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                    <Node id="395" score="yes" recordCount="2.0">
+                      <SimplePredicate field="age" operator="greaterThan" value="78.5"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="2.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="397" score="yes" recordCount="3.0">
+                    <SimplePredicate field="loan" operator="equal" value="yes"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="3.0"/>
+                  </Node>
+                </Node>
+                <Node id="398" score="no" recordCount="2.0">
+                  <SimplePredicate field="job" operator="equal" value="unknown"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="399" score="yes" recordCount="3.0">
+                  <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+              </Node>
+              <Node id="400" score="no" recordCount="21.0">
+                <SimplePredicate field="contact" operator="equal" value="telephone"/>
+                <ScoreDistribution value="no" recordCount="19.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+                <Node id="401" score="yes" recordCount="2.0">
+                  <SimplePredicate field="nr.employed" operator="lessOrEqual" value="5000.15"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="402" score="no" recordCount="19.0">
+                  <SimplePredicate field="nr.employed" operator="greaterThan" value="5000.15"/>
+                  <ScoreDistribution value="no" recordCount="19.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="403" score="no" recordCount="2293.0">
+          <SimplePredicate field="nr.employed" operator="greaterThan" value="5087.65"/>
+          <ScoreDistribution value="no" recordCount="2237.0"/>
+          <ScoreDistribution value="yes" recordCount="56.0"/>
+          <Node id="405" score="no" recordCount="860.0">
+            <SimplePredicate field="month" operator="equal" value="may"/>
+            <ScoreDistribution value="no" recordCount="842.0"/>
+            <ScoreDistribution value="yes" recordCount="18.0"/>
+            <Node id="439" score="no" recordCount="793.0">
+              <SimplePredicate field="duration" operator="lessOrEqual" value="415.0"/>
+              <ScoreDistribution value="no" recordCount="787.0"/>
+              <ScoreDistribution value="yes" recordCount="6.0"/>
+              <Node id="482" score="no" recordCount="2.0">
+                <SimplePredicate field="pdays" operator="lessOrEqual" value="4.5"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="501" score="no" recordCount="791.0">
+                <SimplePredicate field="pdays" operator="greaterThan" value="4.5"/>
+                <ScoreDistribution value="no" recordCount="786.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+                <Node id="524" score="no" recordCount="105.0">
+                  <SimplePredicate field="euribor3m" operator="lessOrEqual" value="1.2755"/>
+                  <ScoreDistribution value="no" recordCount="100.0"/>
+                  <ScoreDistribution value="yes" recordCount="5.0"/>
+                  <Node id="529" score="no" recordCount="95.0">
+                    <SimplePredicate field="duration" operator="lessOrEqual" value="310.5"/>
+                    <ScoreDistribution value="no" recordCount="94.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="550" score="no" recordCount="10.0">
+                    <SimplePredicate field="duration" operator="greaterThan" value="310.5"/>
+                    <ScoreDistribution value="no" recordCount="6.0"/>
+                    <ScoreDistribution value="yes" recordCount="4.0"/>
+                    <Node id="555" score="no" recordCount="2.0">
+                      <SimplePredicate field="job" operator="equal" value="services"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="556" score="no" recordCount="2.0">
+                      <SimplePredicate field="job" operator="equal" value="admin."/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="558" score="yes" recordCount="3.0">
+                      <SimplePredicate field="job" operator="equal" value="technician"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="3.0"/>
+                    </Node>
+                    <Node id="559" score="yes" recordCount="1.0">
+                      <SimplePredicate field="job" operator="equal" value="management"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                    <Node id="560" score="no" recordCount="1.0">
+                      <SimplePredicate field="job" operator="equal" value="student"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="563" score="no" recordCount="1.0">
+                      <SimplePredicate field="job" operator="equal" value="retired"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                  </Node>
+                </Node>
+                <Node id="577" score="no" recordCount="686.0">
+                  <SimplePredicate field="euribor3m" operator="greaterThan" value="1.2755"/>
+                  <ScoreDistribution value="no" recordCount="686.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="434" score="no" recordCount="67.0">
+              <SimplePredicate field="duration" operator="greaterThan" value="415.0"/>
+              <ScoreDistribution value="no" recordCount="55.0"/>
+              <ScoreDistribution value="yes" recordCount="12.0"/>
+              <Node id="435" score="no" recordCount="17.0">
+                <SimplePredicate field="euribor3m" operator="lessOrEqual" value="1.295"/>
+                <ScoreDistribution value="no" recordCount="10.0"/>
+                <ScoreDistribution value="yes" recordCount="7.0"/>
+                <Node id="436" score="no" recordCount="4.0">
+                  <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="440" score="no" recordCount="3.0">
+                  <SimplePredicate field="job" operator="equal" value="services"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="441" score="yes" recordCount="3.0">
+                  <SimplePredicate field="job" operator="equal" value="admin."/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="442" score="yes" recordCount="1.0">
+                  <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="443" score="no" recordCount="3.0">
+                  <SimplePredicate field="job" operator="equal" value="technician"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="445" score="no" recordCount="1.0">
+                  <SimplePredicate field="job" operator="equal" value="student"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="446" score="no" recordCount="1.0">
+                  <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="448" score="yes" recordCount="1.0">
+                  <SimplePredicate field="job" operator="equal" value="retired"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="451" score="no" recordCount="50.0">
+                <SimplePredicate field="euribor3m" operator="greaterThan" value="1.295"/>
+                <ScoreDistribution value="no" recordCount="45.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+                <Node id="452" score="no" recordCount="45.0">
+                  <SimplePredicate field="poutcome" operator="equal" value="nonexistent"/>
+                  <ScoreDistribution value="no" recordCount="41.0"/>
+                  <ScoreDistribution value="yes" recordCount="4.0"/>
+                </Node>
+                <Node id="475" score="yes" recordCount="1.0">
+                  <SimplePredicate field="poutcome" operator="equal" value="success"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="476" score="no" recordCount="4.0">
+                  <SimplePredicate field="poutcome" operator="equal" value="failure"/>
+                  <ScoreDistribution value="no" recordCount="4.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="404" score="no" recordCount="279.0">
+            <SimplePredicate field="month" operator="equal" value="jun"/>
+            <ScoreDistribution value="no" recordCount="277.0"/>
+            <ScoreDistribution value="yes" recordCount="2.0"/>
+          </Node>
+          <Node id="414" score="no" recordCount="234.0">
+            <SimplePredicate field="month" operator="equal" value="nov"/>
+            <ScoreDistribution value="no" recordCount="230.0"/>
+            <ScoreDistribution value="yes" recordCount="4.0"/>
+            <Node id="415" score="no" recordCount="221.0">
+              <SimplePredicate field="duration" operator="lessOrEqual" value="416.0"/>
+              <ScoreDistribution value="no" recordCount="220.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="420" score="no" recordCount="13.0">
+              <SimplePredicate field="duration" operator="greaterThan" value="416.0"/>
+              <ScoreDistribution value="no" recordCount="10.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+              <Node id="421" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="423" score="no" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="4.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="425" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="426" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="428" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="429" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="432" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="433" score="no" recordCount="422.0">
+            <SimplePredicate field="month" operator="equal" value="jul"/>
+            <ScoreDistribution value="no" recordCount="417.0"/>
+            <ScoreDistribution value="yes" recordCount="5.0"/>
+            <Node id="454" score="no" recordCount="391.0">
+              <SimplePredicate field="duration" operator="lessOrEqual" value="457.0"/>
+              <ScoreDistribution value="no" recordCount="389.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+              <Node id="477" score="no" recordCount="307.0">
+                <SimplePredicate field="duration" operator="lessOrEqual" value="253.5"/>
+                <ScoreDistribution value="no" recordCount="307.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="478" score="no" recordCount="84.0">
+                <SimplePredicate field="duration" operator="greaterThan" value="253.5"/>
+                <ScoreDistribution value="no" recordCount="82.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+                <Node id="479" score="no" recordCount="2.0">
+                  <SimplePredicate field="duration" operator="lessOrEqual" value="257.5"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="480" score="no" recordCount="82.0">
+                  <SimplePredicate field="duration" operator="greaterThan" value="257.5"/>
+                  <ScoreDistribution value="no" recordCount="81.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                  <Node id="481" score="no" recordCount="7.0">
+                    <SimplePredicate field="euribor3m" operator="lessOrEqual" value="4.9575"/>
+                    <ScoreDistribution value="no" recordCount="6.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                    <Node id="484" score="yes" recordCount="1.0">
+                      <SimplePredicate field="education" operator="equal" value="high.school"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                    <Node id="485" score="no" recordCount="2.0">
+                      <SimplePredicate field="education" operator="equal" value="university.degree"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="486" score="no" recordCount="1.0">
+                      <SimplePredicate field="education" operator="equal" value="basic.6y"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="487" score="no" recordCount="1.0">
+                      <SimplePredicate field="education" operator="equal" value="basic.4y"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="488" score="no" recordCount="2.0">
+                      <SimplePredicate field="education" operator="equal" value="professional.course"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="491" score="no" recordCount="75.0">
+                    <SimplePredicate field="euribor3m" operator="greaterThan" value="4.9575"/>
+                    <ScoreDistribution value="no" recordCount="75.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="492" score="no" recordCount="31.0">
+              <SimplePredicate field="duration" operator="greaterThan" value="457.0"/>
+              <ScoreDistribution value="no" recordCount="28.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+              <Node id="493" score="yes" recordCount="2.0">
+                <SimplePredicate field="duration" operator="lessOrEqual" value="461.0"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="494" score="no" recordCount="29.0">
+                <SimplePredicate field="duration" operator="greaterThan" value="461.0"/>
+                <ScoreDistribution value="no" recordCount="28.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="500" score="no" recordCount="17.0">
+            <SimplePredicate field="month" operator="equal" value="mar"/>
+            <ScoreDistribution value="no" recordCount="10.0"/>
+            <ScoreDistribution value="yes" recordCount="7.0"/>
+            <Node id="502" score="no" recordCount="1.0">
+              <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="504" score="yes" recordCount="2.0">
+              <SimplePredicate field="job" operator="equal" value="admin."/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+            <Node id="505" score="no" recordCount="1.0">
+              <SimplePredicate field="job" operator="equal" value="self-employed"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="506" score="no" recordCount="9.0">
+              <SimplePredicate field="job" operator="equal" value="technician"/>
+              <ScoreDistribution value="no" recordCount="6.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+              <Node id="507" score="no" recordCount="4.0">
+                <SimplePredicate field="euribor3m" operator="lessOrEqual" value="1.7065000000000001"/>
+                <ScoreDistribution value="no" recordCount="4.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="508" score="yes" recordCount="5.0">
+                <SimplePredicate field="euribor3m" operator="greaterThan" value="1.7065000000000001"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="3.0"/>
+                <Node id="509" score="no" recordCount="2.0">
+                  <SimplePredicate field="campaign" operator="lessOrEqual" value="1.5"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="510" score="yes" recordCount="3.0">
+                  <SimplePredicate field="campaign" operator="greaterThan" value="1.5"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="511" score="no" recordCount="2.0">
+              <SimplePredicate field="job" operator="equal" value="management"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="512" score="yes" recordCount="1.0">
+              <SimplePredicate field="job" operator="equal" value="student"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="515" score="no" recordCount="1.0">
+              <SimplePredicate field="job" operator="equal" value="retired"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="518" score="no" recordCount="346.0">
+            <SimplePredicate field="month" operator="equal" value="aug"/>
+            <ScoreDistribution value="no" recordCount="341.0"/>
+            <ScoreDistribution value="yes" recordCount="5.0"/>
+            <Node id="519" score="no" recordCount="306.0">
+              <SimplePredicate field="duration" operator="lessOrEqual" value="333.5"/>
+              <ScoreDistribution value="no" recordCount="306.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="520" score="no" recordCount="40.0">
+              <SimplePredicate field="duration" operator="greaterThan" value="333.5"/>
+              <ScoreDistribution value="no" recordCount="35.0"/>
+              <ScoreDistribution value="yes" recordCount="5.0"/>
+              <Node id="521" score="no" recordCount="10.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="10.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="522" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="523" score="no" recordCount="8.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="7.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="527" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="528" score="no" recordCount="13.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="10.0"/>
+                <ScoreDistribution value="yes" recordCount="3.0"/>
+              </Node>
+              <Node id="535" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="537" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="539" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="541" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="551" score="no" recordCount="4.0">
+            <SimplePredicate field="month" operator="equal" value="oct"/>
+            <ScoreDistribution value="no" recordCount="2.0"/>
+            <ScoreDistribution value="yes" recordCount="2.0"/>
+            <Node id="552" score="no" recordCount="2.0">
+              <SimplePredicate field="duration" operator="lessOrEqual" value="83.0"/>
+              <ScoreDistribution value="no" recordCount="2.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="553" score="yes" recordCount="2.0">
+              <SimplePredicate field="duration" operator="greaterThan" value="83.0"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+          </Node>
+          <Node id="567" score="no" recordCount="130.0">
+            <SimplePredicate field="month" operator="equal" value="apr"/>
+            <ScoreDistribution value="no" recordCount="117.0"/>
+            <ScoreDistribution value="yes" recordCount="13.0"/>
+            <Node id="568" score="no" recordCount="123.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="57.5"/>
+              <ScoreDistribution value="no" recordCount="115.0"/>
+              <ScoreDistribution value="yes" recordCount="8.0"/>
+              <Node id="569" score="no" recordCount="31.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="30.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="575" score="no" recordCount="18.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="18.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="576" score="no" recordCount="31.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="26.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+                <Node id="578" score="no" recordCount="9.0">
+                  <SimplePredicate field="marital" operator="equal" value="married"/>
+                  <ScoreDistribution value="no" recordCount="6.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                  <Node id="579" score="no" recordCount="2.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="580" score="yes" recordCount="1.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="581" score="no" recordCount="2.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="582" score="no" recordCount="3.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                    <ScoreDistribution value="no" recordCount="3.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="583" score="yes" recordCount="1.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                </Node>
+                <Node id="584" score="no" recordCount="21.0">
+                  <SimplePredicate field="marital" operator="equal" value="single"/>
+                  <ScoreDistribution value="no" recordCount="20.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="589" score="yes" recordCount="1.0">
+                  <SimplePredicate field="marital" operator="equal" value="divorced"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="591" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="592" score="no" recordCount="19.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="17.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+                <Node id="593" score="no" recordCount="16.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="41.5"/>
+                  <ScoreDistribution value="no" recordCount="16.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="594" score="yes" recordCount="3.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="41.5"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+              </Node>
+              <Node id="595" score="no" recordCount="12.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="12.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="596" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="student"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="597" score="no" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="4.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="598" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="599" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="601" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="602" score="yes" recordCount="7.0">
+              <SimplePredicate field="age" operator="greaterThan" value="57.5"/>
+              <ScoreDistribution value="no" recordCount="2.0"/>
+              <ScoreDistribution value="yes" recordCount="5.0"/>
+              <Node id="604" score="yes" recordCount="1.0">
+                <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="606" score="yes" recordCount="2.0">
+                <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="607" score="no" recordCount="4.0">
+                <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+                <Node id="608" score="no" recordCount="2.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="65.0"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="609" score="yes" recordCount="2.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="65.0"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="610" score="no" recordCount="1.0">
+            <SimplePredicate field="month" operator="equal" value="dec"/>
+            <ScoreDistribution value="no" recordCount="1.0"/>
+            <ScoreDistribution value="yes" recordCount="0.0"/>
+          </Node>
+        </Node>
+      </Node>
+      <Node id="1" score="no" recordCount="274.0">
+        <SimplePredicate field="duration" operator="greaterThan" value="563.5"/>
+        <ScoreDistribution value="no" recordCount="137.0"/>
+        <ScoreDistribution value="yes" recordCount="137.0"/>
+        <Node id="3" score="yes" recordCount="46.0">
+          <SimplePredicate field="euribor3m" operator="lessOrEqual" value="1.286"/>
+          <ScoreDistribution value="no" recordCount="9.0"/>
+          <ScoreDistribution value="yes" recordCount="37.0"/>
+          <Node id="4" score="yes" recordCount="4.0">
+            <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="4.0"/>
+          </Node>
+          <Node id="5" score="yes" recordCount="2.0">
+            <SimplePredicate field="job" operator="equal" value="services"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="2.0"/>
+          </Node>
+          <Node id="6" score="yes" recordCount="15.0">
+            <SimplePredicate field="job" operator="equal" value="admin."/>
+            <ScoreDistribution value="no" recordCount="2.0"/>
+            <ScoreDistribution value="yes" recordCount="13.0"/>
+            <Node id="7" score="yes" recordCount="3.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+            </Node>
+            <Node id="8" score="yes" recordCount="2.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+            <Node id="9" score="yes" recordCount="5.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="5.0"/>
+            </Node>
+            <Node id="10" score="no" recordCount="2.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+              <ScoreDistribution value="no" recordCount="2.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="11" score="yes" recordCount="3.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+            </Node>
+          </Node>
+          <Node id="12" score="yes" recordCount="1.0">
+            <SimplePredicate field="job" operator="equal" value="self-employed"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="1.0"/>
+          </Node>
+          <Node id="13" score="yes" recordCount="6.0">
+            <SimplePredicate field="job" operator="equal" value="technician"/>
+            <ScoreDistribution value="no" recordCount="2.0"/>
+            <ScoreDistribution value="yes" recordCount="4.0"/>
+            <Node id="14" score="no" recordCount="2.0">
+              <SimplePredicate field="month" operator="equal" value="may"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="16" score="yes" recordCount="1.0">
+              <SimplePredicate field="month" operator="equal" value="nov"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+            <Node id="21" score="no" recordCount="1.0">
+              <SimplePredicate field="month" operator="equal" value="sep"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="22" score="yes" recordCount="2.0">
+              <SimplePredicate field="month" operator="equal" value="apr"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+          </Node>
+          <Node id="24" score="no" recordCount="4.0">
+            <SimplePredicate field="job" operator="equal" value="management"/>
+            <ScoreDistribution value="no" recordCount="2.0"/>
+            <ScoreDistribution value="yes" recordCount="2.0"/>
+            <Node id="25" score="no" recordCount="2.0">
+              <SimplePredicate field="nr.employed" operator="lessOrEqual" value="5049.85"/>
+              <ScoreDistribution value="no" recordCount="2.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="26" score="yes" recordCount="2.0">
+              <SimplePredicate field="nr.employed" operator="greaterThan" value="5049.85"/>
+              <ScoreDistribution value="no" recordCount="0.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+            </Node>
+          </Node>
+          <Node id="27" score="yes" recordCount="3.0">
+            <SimplePredicate field="job" operator="equal" value="student"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="3.0"/>
+          </Node>
+          <Node id="29" score="no" recordCount="3.0">
+            <SimplePredicate field="job" operator="equal" value="unemployed"/>
+            <ScoreDistribution value="no" recordCount="2.0"/>
+            <ScoreDistribution value="yes" recordCount="1.0"/>
+          </Node>
+          <Node id="30" score="yes" recordCount="4.0">
+            <SimplePredicate field="job" operator="equal" value="retired"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="4.0"/>
+          </Node>
+          <Node id="31" score="no" recordCount="1.0">
+            <SimplePredicate field="job" operator="equal" value="unknown"/>
+            <ScoreDistribution value="no" recordCount="1.0"/>
+            <ScoreDistribution value="yes" recordCount="0.0"/>
+          </Node>
+          <Node id="32" score="yes" recordCount="3.0">
+            <SimplePredicate field="job" operator="equal" value="housemaid"/>
+            <ScoreDistribution value="no" recordCount="0.0"/>
+            <ScoreDistribution value="yes" recordCount="3.0"/>
+          </Node>
+        </Node>
+        <Node id="33" score="no" recordCount="228.0">
+          <SimplePredicate field="euribor3m" operator="greaterThan" value="1.286"/>
+          <ScoreDistribution value="no" recordCount="128.0"/>
+          <ScoreDistribution value="yes" recordCount="100.0"/>
+          <Node id="34" score="no" recordCount="56.0">
+            <SimplePredicate field="duration" operator="lessOrEqual" value="644.5"/>
+            <ScoreDistribution value="no" recordCount="46.0"/>
+            <ScoreDistribution value="yes" recordCount="10.0"/>
+            <Node id="35" score="no" recordCount="10.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+              <ScoreDistribution value="no" recordCount="8.0"/>
+              <ScoreDistribution value="yes" recordCount="2.0"/>
+              <Node id="36" score="yes" recordCount="1.0">
+                <SimplePredicate field="month" operator="equal" value="may"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="37" score="no" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="jun"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="38" score="no" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="nov"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="39" score="no" recordCount="1.0">
+                <SimplePredicate field="month" operator="equal" value="jul"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="41" score="no" recordCount="1.0">
+                <SimplePredicate field="month" operator="equal" value="aug"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="44" score="no" recordCount="3.0">
+                <SimplePredicate field="month" operator="equal" value="apr"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="46" score="no" recordCount="15.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+              <ScoreDistribution value="no" recordCount="15.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+            <Node id="47" score="yes" recordCount="6.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+              <ScoreDistribution value="no" recordCount="1.0"/>
+              <ScoreDistribution value="yes" recordCount="5.0"/>
+              <Node id="48" score="yes" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="may"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="50" score="no" recordCount="1.0">
+                <SimplePredicate field="month" operator="equal" value="nov"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="51" score="yes" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="jul"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="53" score="yes" recordCount="1.0">
+                <SimplePredicate field="month" operator="equal" value="aug"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+            </Node>
+            <Node id="58" score="no" recordCount="13.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+              <ScoreDistribution value="no" recordCount="10.0"/>
+              <ScoreDistribution value="yes" recordCount="3.0"/>
+              <Node id="59" score="no" recordCount="3.0">
+                <SimplePredicate field="month" operator="equal" value="may"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="60" score="yes" recordCount="3.0">
+                <SimplePredicate field="month" operator="equal" value="jun"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="61" score="no" recordCount="3.0">
+                <SimplePredicate field="month" operator="equal" value="nov"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="62" score="no" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="jul"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="67" score="no" recordCount="2.0">
+                <SimplePredicate field="month" operator="equal" value="apr"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+            </Node>
+            <Node id="69" score="no" recordCount="12.0">
+              <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+              <ScoreDistribution value="no" recordCount="12.0"/>
+              <ScoreDistribution value="yes" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="70" score="yes" recordCount="172.0">
+            <SimplePredicate field="duration" operator="greaterThan" value="644.5"/>
+            <ScoreDistribution value="no" recordCount="82.0"/>
+            <ScoreDistribution value="yes" recordCount="90.0"/>
+            <Node id="71" score="yes" recordCount="31.0">
+              <SimplePredicate field="education" operator="equal" value="basic.9y"/>
+              <ScoreDistribution value="no" recordCount="11.0"/>
+              <ScoreDistribution value="yes" recordCount="20.0"/>
+              <Node id="72" score="yes" recordCount="16.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="6.0"/>
+                <ScoreDistribution value="yes" recordCount="10.0"/>
+                <Node id="73" score="no" recordCount="4.0">
+                  <SimplePredicate field="month" operator="equal" value="may"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                  <Node id="74" score="yes" recordCount="2.0">
+                    <SimplePredicate field="duration" operator="lessOrEqual" value="826.0"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                  <Node id="75" score="no" recordCount="2.0">
+                    <SimplePredicate field="duration" operator="greaterThan" value="826.0"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                </Node>
+                <Node id="76" score="yes" recordCount="5.0">
+                  <SimplePredicate field="month" operator="equal" value="jun"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="4.0"/>
+                </Node>
+                <Node id="79" score="yes" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="nov"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="80" score="no" recordCount="2.0">
+                  <SimplePredicate field="month" operator="equal" value="jul"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="81" score="no" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="mar"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="82" score="yes" recordCount="2.0">
+                  <SimplePredicate field="month" operator="equal" value="aug"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="85" score="yes" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="apr"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="87" score="yes" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="88" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="89" score="yes" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+              </Node>
+              <Node id="90" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="91" score="yes" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="3.0"/>
+              </Node>
+              <Node id="94" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="student"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="95" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="100" score="no" recordCount="40.0">
+              <SimplePredicate field="education" operator="equal" value="high.school"/>
+              <ScoreDistribution value="no" recordCount="23.0"/>
+              <ScoreDistribution value="yes" recordCount="17.0"/>
+              <Node id="101" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="102" score="no" recordCount="9.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="7.0"/>
+                <ScoreDistribution value="yes" recordCount="2.0"/>
+                <Node id="103" score="no" recordCount="4.0">
+                  <SimplePredicate field="marital" operator="equal" value="married"/>
+                  <ScoreDistribution value="no" recordCount="4.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="104" score="no" recordCount="4.0">
+                  <SimplePredicate field="marital" operator="equal" value="single"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="107" score="yes" recordCount="1.0">
+                  <SimplePredicate field="marital" operator="equal" value="divorced"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="110" score="yes" recordCount="17.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="8.0"/>
+                <ScoreDistribution value="yes" recordCount="9.0"/>
+                <Node id="111" score="no" recordCount="5.0">
+                  <SimplePredicate field="month" operator="equal" value="may"/>
+                  <ScoreDistribution value="no" recordCount="4.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="114" score="yes" recordCount="2.0">
+                  <SimplePredicate field="month" operator="equal" value="jun"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="115" score="yes" recordCount="4.0">
+                  <SimplePredicate field="month" operator="equal" value="nov"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                </Node>
+                <Node id="118" score="no" recordCount="3.0">
+                  <SimplePredicate field="month" operator="equal" value="jul"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="120" score="yes" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="aug"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="121" score="no" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="oct"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="123" score="yes" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="apr"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="126" score="yes" recordCount="5.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+              </Node>
+              <Node id="127" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="129" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="130" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="131" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="133" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+            </Node>
+            <Node id="134" score="no" recordCount="50.0">
+              <SimplePredicate field="education" operator="equal" value="university.degree"/>
+              <ScoreDistribution value="no" recordCount="25.0"/>
+              <ScoreDistribution value="yes" recordCount="25.0"/>
+              <Node id="136" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="blue-collar"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="137" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="services"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="138" score="yes" recordCount="23.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="10.0"/>
+                <ScoreDistribution value="yes" recordCount="13.0"/>
+                <Node id="139" score="no" recordCount="2.0">
+                  <SimplePredicate field="duration" operator="lessOrEqual" value="677.0"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="140" score="yes" recordCount="21.0">
+                  <SimplePredicate field="duration" operator="greaterThan" value="677.0"/>
+                  <ScoreDistribution value="no" recordCount="8.0"/>
+                  <ScoreDistribution value="yes" recordCount="13.0"/>
+                  <Node id="141" score="no" recordCount="2.0">
+                    <SimplePredicate field="age" operator="lessOrEqual" value="28.5"/>
+                    <ScoreDistribution value="no" recordCount="2.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="142" score="yes" recordCount="19.0">
+                    <SimplePredicate field="age" operator="greaterThan" value="28.5"/>
+                    <ScoreDistribution value="no" recordCount="6.0"/>
+                    <ScoreDistribution value="yes" recordCount="13.0"/>
+                    <Node id="143" score="yes" recordCount="4.0">
+                      <SimplePredicate field="month" operator="equal" value="may"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="3.0"/>
+                    </Node>
+                    <Node id="148" score="no" recordCount="4.0">
+                      <SimplePredicate field="month" operator="equal" value="jun"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="2.0"/>
+                      <Node id="152" score="no" recordCount="2.0">
+                        <SimplePredicate field="duration" operator="lessOrEqual" value="985.5"/>
+                        <ScoreDistribution value="no" recordCount="2.0"/>
+                        <ScoreDistribution value="yes" recordCount="0.0"/>
+                      </Node>
+                      <Node id="153" score="yes" recordCount="2.0">
+                        <SimplePredicate field="duration" operator="greaterThan" value="985.5"/>
+                        <ScoreDistribution value="no" recordCount="0.0"/>
+                        <ScoreDistribution value="yes" recordCount="2.0"/>
+                      </Node>
+                    </Node>
+                    <Node id="156" score="no" recordCount="1.0">
+                      <SimplePredicate field="month" operator="equal" value="nov"/>
+                      <ScoreDistribution value="no" recordCount="1.0"/>
+                      <ScoreDistribution value="yes" recordCount="0.0"/>
+                    </Node>
+                    <Node id="157" score="yes" recordCount="3.0">
+                      <SimplePredicate field="month" operator="equal" value="jul"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="3.0"/>
+                    </Node>
+                    <Node id="159" score="yes" recordCount="6.0">
+                      <SimplePredicate field="month" operator="equal" value="aug"/>
+                      <ScoreDistribution value="no" recordCount="2.0"/>
+                      <ScoreDistribution value="yes" recordCount="4.0"/>
+                      <Node id="162" score="no" recordCount="3.0">
+                        <SimplePredicate field="housing" operator="equal" value="yes"/>
+                        <ScoreDistribution value="no" recordCount="2.0"/>
+                        <ScoreDistribution value="yes" recordCount="1.0"/>
+                      </Node>
+                      <Node id="163" score="yes" recordCount="3.0">
+                        <SimplePredicate field="housing" operator="equal" value="no"/>
+                        <ScoreDistribution value="no" recordCount="0.0"/>
+                        <ScoreDistribution value="yes" recordCount="3.0"/>
+                      </Node>
+                    </Node>
+                    <Node id="168" score="yes" recordCount="1.0">
+                      <SimplePredicate field="month" operator="equal" value="apr"/>
+                      <ScoreDistribution value="no" recordCount="0.0"/>
+                      <ScoreDistribution value="yes" recordCount="1.0"/>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node id="173" score="no" recordCount="3.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="174" score="yes" recordCount="9.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="4.0"/>
+                <ScoreDistribution value="yes" recordCount="5.0"/>
+                <Node id="178" score="no" recordCount="3.0">
+                  <SimplePredicate field="nr.employed" operator="lessOrEqual" value="5145.05"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="179" score="yes" recordCount="6.0">
+                  <SimplePredicate field="nr.employed" operator="greaterThan" value="5145.05"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="5.0"/>
+                  <Node id="181" score="yes" recordCount="2.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                  <Node id="182" score="yes" recordCount="1.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="1.0"/>
+                  </Node>
+                  <Node id="183" score="no" recordCount="1.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                    <ScoreDistribution value="no" recordCount="1.0"/>
+                    <ScoreDistribution value="yes" recordCount="0.0"/>
+                  </Node>
+                  <Node id="184" score="yes" recordCount="2.0">
+                    <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                    <ScoreDistribution value="no" recordCount="0.0"/>
+                    <ScoreDistribution value="yes" recordCount="2.0"/>
+                  </Node>
+                </Node>
+              </Node>
+              <Node id="185" score="no" recordCount="6.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="3.0"/>
+                <Node id="189" score="yes" recordCount="2.0">
+                  <SimplePredicate field="month" operator="equal" value="jun"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="2.0"/>
+                </Node>
+                <Node id="190" score="no" recordCount="2.0">
+                  <SimplePredicate field="month" operator="equal" value="nov"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="191" score="no" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="jul"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="196" score="yes" recordCount="1.0">
+                  <SimplePredicate field="month" operator="equal" value="apr"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+              </Node>
+              <Node id="199" score="no" recordCount="4.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="204" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="206" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="housemaid"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+            </Node>
+            <Node id="208" score="yes" recordCount="9.0">
+              <SimplePredicate field="education" operator="equal" value="basic.6y"/>
+              <ScoreDistribution value="no" recordCount="2.0"/>
+              <ScoreDistribution value="yes" recordCount="7.0"/>
+              <Node id="209" score="no" recordCount="3.0">
+                <SimplePredicate field="campaign" operator="lessOrEqual" value="1.5"/>
+                <ScoreDistribution value="no" recordCount="2.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="210" score="yes" recordCount="6.0">
+                <SimplePredicate field="campaign" operator="greaterThan" value="1.5"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="6.0"/>
+              </Node>
+            </Node>
+            <Node id="211" score="yes" recordCount="21.0">
+              <SimplePredicate field="education" operator="equal" value="basic.4y"/>
+              <ScoreDistribution value="no" recordCount="9.0"/>
+              <ScoreDistribution value="yes" recordCount="12.0"/>
+              <Node id="215" score="no" recordCount="7.0">
+                <SimplePredicate field="duration" operator="lessOrEqual" value="775.0"/>
+                <ScoreDistribution value="no" recordCount="6.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="222" score="yes" recordCount="14.0">
+                <SimplePredicate field="duration" operator="greaterThan" value="775.0"/>
+                <ScoreDistribution value="no" recordCount="3.0"/>
+                <ScoreDistribution value="yes" recordCount="11.0"/>
+                <Node id="224" score="no" recordCount="4.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="36.0"/>
+                  <ScoreDistribution value="no" recordCount="3.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="231" score="yes" recordCount="10.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="36.0"/>
+                  <ScoreDistribution value="no" recordCount="0.0"/>
+                  <ScoreDistribution value="yes" recordCount="10.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="232" score="no" recordCount="17.0">
+              <SimplePredicate field="education" operator="equal" value="professional.course"/>
+              <ScoreDistribution value="no" recordCount="9.0"/>
+              <ScoreDistribution value="yes" recordCount="8.0"/>
+              <Node id="235" score="no" recordCount="2.0">
+                <SimplePredicate field="job" operator="equal" value="admin."/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="236" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="self-employed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="237" score="no" recordCount="10.0">
+                <SimplePredicate field="job" operator="equal" value="technician"/>
+                <ScoreDistribution value="no" recordCount="6.0"/>
+                <ScoreDistribution value="yes" recordCount="4.0"/>
+                <Node id="238" score="yes" recordCount="4.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="fri"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="3.0"/>
+                </Node>
+                <Node id="241" score="no" recordCount="2.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="wed"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="1.0"/>
+                </Node>
+                <Node id="242" score="no" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="mon"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="243" score="no" recordCount="2.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="thu"/>
+                  <ScoreDistribution value="no" recordCount="2.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+                <Node id="244" score="no" recordCount="1.0">
+                  <SimplePredicate field="day_of_week" operator="equal" value="tue"/>
+                  <ScoreDistribution value="no" recordCount="1.0"/>
+                  <ScoreDistribution value="yes" recordCount="0.0"/>
+                </Node>
+              </Node>
+              <Node id="245" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="management"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+              <Node id="247" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="entrepreneur"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="248" score="yes" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="unemployed"/>
+                <ScoreDistribution value="no" recordCount="0.0"/>
+                <ScoreDistribution value="yes" recordCount="1.0"/>
+              </Node>
+              <Node id="249" score="no" recordCount="1.0">
+                <SimplePredicate field="job" operator="equal" value="retired"/>
+                <ScoreDistribution value="no" recordCount="1.0"/>
+                <ScoreDistribution value="yes" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="252" score="no" recordCount="4.0">
+              <SimplePredicate field="education" operator="equal" value="unknown"/>
+              <ScoreDistribution value="no" recordCount="3.0"/>
+              <ScoreDistribution value="yes" recordCount="1.0"/>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>
